@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    .form-container {
+        text-align: center;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 50px;
+        width: 400px;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-title {
+        margin-bottom: 30px;
+        color: #333;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+        font-size: 16px;
+    }
+
+    .form-input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .btn-submit {
+        display: inline-block;
+        padding: 12px 24px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="form-container">
+    <form action="{{ url_for('edit', id=data[0]) }}" method="post">
+        <h4 class="form-title">Edit Fund Details</h4>
+        <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" name="name" class="form-input" value="{{ data[1] }}">
+        </div>
+        <div class="form-group">
+            <label for="code" class="form-label">Fund Code</label>
+            <input type="text" name="code" class="form-input" value="{{ data[2] }}">
+        </div>
+        <div class="form-group">
+            <label for="amount" class="form-label">Invested Amount</label>
+            <input type="text" name="amount" class="form-input" value="{{ data[3] }}">
+        </div>
+        <div class="form-group">
+            <label for="unitheld" class="form-label">Unit Held</label>
+            <input type="text" name="unitheld" class="form-input" value="{{ data[4] }}">
+        </div>
+        <button type="submit" class="btn-submit">Edit Detail</button>
+    </form>
+</div>
+{% endblock %}

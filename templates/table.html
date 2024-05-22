@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <style>
+        /* Custom table style */
+        .custom-table {
+            border-collapse: separate;
+            border-spacing: 0 10px; /* Adjust spacing between rows */
+            width: 100%;
+        }
+
+        .custom-table th,
+        .custom-table td {
+            padding: 10px;
+        }
+
+        .custom-table th {
+            background-color: #f8f9fa; /* Header background color */
+            color: #212529; /* Header text color */
+        }
+
+        .custom-table tbody tr:nth-of-type(odd) {
+            background-color: #f8f9fa; /* Alternate row background color */
+        }
+
+        .custom-table tbody tr:hover {
+            background-color: #e9ecef; /* Hover row background color */
+        }
+
+        .custom-table .btn {
+            padding: 3px 8px;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+    </style>
+{% endblock head %}
+
+{% block body %}
+    <div class="table-responsive">
+        <table class="table table-striped custom-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Fund Name</th>
+                    <th>Invested Amount</th>
+                    <th>Units Held</th>
+                    <th>Current Value</th>
+                    <th>Growth</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.Fund_name }}</td>
+                    <td>{{ row.Invested_amount }}</td>
+                    <td>{{ row.Unit_held }}</td>
+                    <td>{{ row.Current_value }}</td>
+                    <td>{{ row.Growth }}</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary"><a href="{{ url_for('edit', id=row.id) }}" class="text-white">Edit</a></button>
+                        <button class="btn btn-sm btn-danger"><a href="{{ url_for('remove', id=row.id) }}" class="text-white">Delete</a></button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary"><a href="{{ url_for('add') }}" class="text-white">Add detail</a></button>
+        <button class="btn btn-secondary"><a href="{{ url_for('logout') }}" class="text-white">Logout</a></button>
+    </div>
+{% endblock body %}
