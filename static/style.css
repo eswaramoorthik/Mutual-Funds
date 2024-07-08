@@ -1,0 +1,94 @@
+body {
+    background-color: #f8f9fa; 
+    color: #212529;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.navbar {
+    background-color: #343a40; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.navbar-brand img {
+    width: 154px;
+    height: 40px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff; 
+    transition: color 0.3s ease; 
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffc107; 
+}
+
+.dropdown-menu {
+    background-color: #343a40; 
+}
+
+.dropdown-menu .dropdown-item {
+    color: #ffffff;
+    transition: background-color 0.3s ease; 
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #495057; 
+}
+
+.btn-outline-light {
+    color: #ffffff; 
+    border-color: #ffffff; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.btn-outline-light:hover {
+    background-color: #ffffff; 
+    color: #343a40; 
+}
+
+.container {
+    padding-top: 20px; 
+}
+
+.alert {
+    margin-top: 20px; 
+}
+
+footer {
+    background-color: #343a40; 
+    color: #ffffff; 
+    padding: 10px 0; 
+    text-align: center; 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #ffc107; 
+    text-decoration: none; 
+}
+
+footer a:hover {
+    color: #ffffff; 
+}
+
+.header-title {
+    text-align: center;
+    margin: 40px 0;
+    color: #343a40;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.btn-custom {
+    background-color: #343a40;
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #ffc107;
+    color: #343a40;
+}

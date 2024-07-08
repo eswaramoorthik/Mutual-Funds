@@ -51,7 +51,7 @@ def is_password_strong(password):
 
 @app.route('/')
 def navbar():
-    return render_template('navbar.html')
+    return render_template('base.html')
 
 
 class User:
@@ -224,10 +224,6 @@ def remove(id):
 
     flash('Details successfully deleted', 'success')
     return redirect(url_for("table"))
-
-
-
-
 
 @app.route('/logout/')
 def logout():
